@@ -1,0 +1,21 @@
+<body><br><h1>
+  ..YOUR FAVORITE ANIME..
+</h1>
+
+<ul>
+  <li style="list-style-type: none" *ngFor="let photo of photoList;"><br/><b>{{photo.title}}</b><br/> <img src="{{photo.url}}"> </li>
+</ul>
+
+<form (submit)="addAnime(anime.value)">
+  <div>
+    <label for="anime">Anime: </label>
+    <input type="text" #anime placeholder="Add your anime..">
+  </div>
+</form> 
+
+<ul>
+  <li style="list-style-type: none" *ngFor="let anime of animes; let i = index"><br>
+ {{i+1}}.{{anime}} <button (click)="removeAnime(anime)">Delete</button><br>
+  </li>
+ </ul>
+</body>
